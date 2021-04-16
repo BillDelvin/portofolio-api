@@ -1,9 +1,13 @@
 const express = require('express');
 const server = express();
 
-server.get('/test', (req, res) => {
- return res.json({ message: 'test is working!' });
-});
+const dbConnection = require('./db');
+
+const portofolioRoutes = require('./routes/portofolio-routes');
+
+dbConnection.connect();
+
+server.use('/api/v1', portofolioRoutes);
 
 const PORT = parseInt(process.env.PORT, 10) || 3001;
 
