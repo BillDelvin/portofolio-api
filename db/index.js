@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('../config/dev');
 
+require('./models/portofolio-modal');
+
 exports.connect = async () => {
  return await mongoose.connect(
   config.DB_URI,
