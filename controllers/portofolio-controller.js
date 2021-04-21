@@ -27,4 +27,7 @@ module.exports = {
    return res.status(400).json('API Error Message!');
   }
  },
+ createPortofolio: async (req, res, next) => {
+  return res.status(200).json({ message: req.body });
+ },
 };
