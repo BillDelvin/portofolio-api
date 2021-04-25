@@ -1,6 +1,7 @@
 const data = {
  portofolios: [
   {
+   userId: 'google-oauth2|110698770403998481124',
    title: 'Job in Netcentric',
    company: 'Netcentric',
    companyWebsite: 'www.google.com',
@@ -11,6 +12,7 @@ const data = {
    endDate: '01/01/2016',
   },
   {
+   userId: 'google-oauth2|110698770403998481124',
    title: 'Job in Siemens',
    company: 'Siemens',
    companyWebsite: 'www.google.com',
@@ -21,6 +23,7 @@ const data = {
    endDate: '01/01/2013',
   },
   {
+   userId: 'google-oauth2|110698770403998481124',
    title: 'Work in USA',
    company: 'WhoKnows',
    companyWebsite: 'www.google.com',
