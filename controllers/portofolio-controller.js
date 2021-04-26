@@ -30,7 +30,7 @@ module.exports = {
  createPortofolio: async (req, res, next) => {
   const portofolioData = req.body;
   // todo : extract from req
-  const userId = 'google-oauth2|110698770403998481124';
+  const userId = req.user.sub;
   const portofolio = new portofolioModel(portofolioData);
   portofolio.userId = userId;
 
@@ -38,6 +38,24 @@ module.exports = {
    const newPortofolio = await portofolio.save();
    return res.status(200).json(newPortofolio);
   } catch (error) {
+   return res.status(400).json(error);
+  }
+ },
+ updatedPortofolio: async (req, res, next) => {
+  console.log(req.body);
+  const {
+   body,
+   params: { id },
+  } = req;
+
+  try {
+   const findPortofolioandUpdate = await portofolioModel.findByIdAndUpdate({ _id: id }, body, {
+    new: true,
+    runValidators: true,
+   });
+   return res.status(200).json(findPortofolioandUpdate);
+  } catch (error) {
+   console.log(error);
    return res.status(400).json(error);
   }
  },
