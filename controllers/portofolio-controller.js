@@ -38,7 +38,7 @@ module.exports = {
    const newPortofolio = await portofolio.save();
    return res.status(200).json(newPortofolio);
   } catch (error) {
-   return res.status(400).json('API Error Message!');
+   return res.status(400).json(error);
   }
  },
 };
