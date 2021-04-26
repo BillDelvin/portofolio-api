@@ -11,4 +11,6 @@ router.post('/portofolios', checkJwt, portofolioController.createPortofolio);
 
 router.patch('/portofolios/:id', checkJwt, portofolioController.updatedPortofolio);
 
+router.delete('/portofolios/:id', checkJwt, portofolioController.deletePortofolio);
+
 module.exports = router;
