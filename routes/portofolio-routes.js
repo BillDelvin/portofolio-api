@@ -8,6 +8,7 @@ router.get('/portofolios/:id', portofolioController.getPortofolioById);
 
 // creatin middleware for check admin rights!!
 router.post('/portofolios', checkJwt, portofolioController.createPortofolio);
+
 router.patch('/portofolios/:id', checkJwt, portofolioController.updatedPortofolio);
 
 module.exports = router;
