@@ -57,4 +57,16 @@ module.exports = {
    return res.status(400).json(error);
   }
  },
+ deletePortofolio: async (req, res, next) => {
+  const {
+   params: { id },
+  } = req;
+
+  try {
+   const deletePortofolio = await portofolioModel.findByIdAndRemove({ _id: id });
+   return res.status(200).json({ _id: deletePortofolio.id });
+  } catch (error) {
+   return res.status(400).json(error);
+  }
+ },
 };
