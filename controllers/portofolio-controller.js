@@ -42,7 +42,6 @@ module.exports = {
   }
  },
  updatedPortofolio: async (req, res, next) => {
-  console.log(req.body);
   const {
    body,
    params: { id },
@@ -55,7 +54,6 @@ module.exports = {
    });
    return res.status(200).json(findPortofolioandUpdate);
   } catch (error) {
-   console.log(error);
    return res.status(400).json(error);
   }
  },
