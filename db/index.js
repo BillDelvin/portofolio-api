@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const config = require('../config/dev');
 
 require('./models/portofolio-modal');
+require('./models/blog-modal');
 
 exports.connect = async () => {
  return await mongoose.connect(
