@@ -1,5 +1,6 @@
-const { portofolios } = require('./data');
+const { portofolios, blogs } = require('./data');
 const portofolioModel = require('../db/models/portofolio-modal');
+const blogModel = require('../db/models/blog-modal');
 
 class FakeDB {
  async clean() {
@@ -8,6 +9,7 @@ class FakeDB {
 
  async addData() {
   await portofolioModel.create(portofolios);
+  await blogModel.create(blogs);
  }
 
  async populate() {
